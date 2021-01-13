@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Ace Editor</title>
+  <style type="text/css" media="screen">
+    body {
+      overflow: hidden;
+    }
+
+    #editor {
+      margin: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  </style>
+  <script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+  <script src="ace/ext-language_tools.js"></script>
+</head>
+
+<body style="background-color: #25282c">
+  <pre id="editor"></pre>
+  <script>
+    ace.require("ace/ext/language_tools");
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/lua");
+    editor.setOption("enableLiveAutocompletion", true);
+    editor.setOption("cursorStyle", "smooth");
+    editor.setShowPrintMargin(false);
+    SetDefaults();
+
+
+    function SetFontSize(size) {
+      document.getElementById('editor').style.fontSize = `${size}px`;
+    }
+
+    function SetDefaults() {
+      document.getElementById('editor').style.fontSize = '13px';
+      editor.setTheme("ace/theme/tomorrow_night_eighties");
+    }
+
+    function GetFontSize() {
+      return document.getElementById('editor').style.fontSize;
+    }
+
+    function GetText() {
+      return editor.getValue();
+    }
+
+    function SetText(text) {
+      editor.setValue(text);
+      editor.session.setValue(text);
+    }
+
+    function GetTheme() {
+      return editor.getTheme().toString().replace("ace/theme/", "");
+    }
+
+    function SetTheme(th) {
+      editor.setTheme("ace/theme/" + th);
+    }
+
+    document.oncontextmenu = function () {
+      return false;
+    }
+
+    function GetSelectedText() {
+      return editor.getSelectedText();
+    }
+
+    function SelectAll() {
+      editor.selectAll();
+    }
+
+    function ClearSelection() {
+      editor.ClearSelection();
+    }
+
+    function Undo() {
+      editor.undo();
+    }
+
+    function Redo() {
+      editor.redo();
+    }
+
+    function findNext(word) {
+      editor.find(word, {
+        range: null,
+        backwards: false,
+        wrap: false,
+        caseSensitive: false,
+        wholeWord: false,
+        regExp: false
+      });
+      editor.findNext();
+    }
+
+    function findPrevious(word) {
+      editor.find(word, {
+        range: null,
+        backwards: false,
+        wrap: false,
+        caseSensitive: false,
+        wholeWord: false,
+        regExp: false
+      });
+      editor.findPrevious();
+    }
+
+    function ReplaceAll(find, replace) {
+      editor.find(find);
+      editor.replaceAll(replace);
+    }
+
+    function Replace(find, replace) {
+      editor.find(find);
+      editor.replace(replace);
+    }
+
+    function GetLines(from, to) {
+      return editor.session.getLines(parseInt(from), parseInt(to));
+    }
+  </script>
+</body>
+
+</html>

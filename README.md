@@ -67,22 +67,6 @@ AceEditor editor = new()
 ```
 
 ## Events
- Text Changed:
-```csharp
-AceEditor editor = new()
-{
-  Address = new Uri($"{Environment.CurrentDirectory}\\ace\\ace.html").AbsoluteUri
-};
-  editor.SetDefaults();
-  editor.AceTextChanged += Editor_AceTextChanged;
-
-  private void Editor_AceTextChanged(object sender, AceEventArgs.TextChangedArgs e)
-  {
-     string oldText = e.oldText;
-     string newText = e.newText;
-  }
-
-```
 Ace Ready:
 ```csharp
 AceEditor editor = new()
