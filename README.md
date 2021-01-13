@@ -51,7 +51,7 @@ Ace Text Size: GET/SET(int)
 AceEditor editor = new()
 {
   Address = new Uri($"{Environment.CurrentDirectory}\\ace\\ace.html").AbsoluteUri,
-  AceTextSize= 13
+  AceTextSize= "13px"
 };
   MessageBox.Show(editor.AceTextSize.ToString());//expected output: 13
 
