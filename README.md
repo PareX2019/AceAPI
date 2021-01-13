@@ -4,7 +4,7 @@ AceAPI is a library that helps you use Ace Editor in a WPF application
 
 ## Installation
 
-Import the [files](https://google.com) in your project and your good to go.
+Import the [files](https://github.com/PareX2019/AceAPI/tree/main/src) in your project and your good to go.
 
 ## Usage
 
