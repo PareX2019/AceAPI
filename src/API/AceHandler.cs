@@ -127,9 +127,9 @@ namespace tesstbigds
 
         private object Execute(string script)
         {
-            var Task = this.EvaluateScriptAsync(script);
-            Task.Wait();
-            return Task.Result.Success ? Task.Result.Result ?? "" : Task.Result.Message;
+            var Object = this.EvaluateScriptAsync(script);
+            Object.Wait();
+            return Object.Result.Success ? Object.Result.Result ?? "" : Object.Result.Message;
         }
 
         /* Properties Start */
