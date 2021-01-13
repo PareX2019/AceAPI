@@ -67,18 +67,6 @@ AceEditor editor = new()
 ```
 
 ## Events
-Ace Ready:
-```csharp
-AceEditor editor = new()
-{
-  Address = new Uri($"{Environment.CurrentDirectory}\\ace\\ace.html").AbsoluteUri
-};
-  editor.SetDefaults();
-  editor.AceReady += Editor_AceReady;
-
-private void Editor_AceReady(object sender, EventArgs e) =>  editor.AceText = "Ready";  
-
-```
 Ace TextSize Changed:
 ```csharp
 AceEditor editor = new()
