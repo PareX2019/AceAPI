@@ -91,7 +91,7 @@ AceEditor editor = new()
   Address = new Uri($"{Environment.CurrentDirectory}\\ace\\ace.html").AbsoluteUri
 };
   editor.SetDefaults();
-  editor.AceTextSizeChanged += Editor_AceThemeChanged;
+  editor.AceThemeChanged += Editor_AceThemeChanged;
 
 private void Editor_AceThemeChanged(object sender, AceEventArgs.ThemeChangedArgs e)
 {
