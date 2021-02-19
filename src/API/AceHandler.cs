@@ -47,7 +47,7 @@ namespace tesstbigds
 
         /* Events End */
 
-        /* Functions Start */
+        /* Methods Start */
 
         public void ClearText() => this.AceText = "";
 
@@ -123,7 +123,7 @@ namespace tesstbigds
 
         /* Replace End */
 
-        /* Functions End */
+        /* Methods End */
 
         private object Execute(string script)
         {
